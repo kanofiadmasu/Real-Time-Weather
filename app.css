@@ -10,55 +10,48 @@ body {
     justify-content: center;
     min-height: 100vh;
 }
-
 .main-container {
-    width: 600px;
-    height: 400px;
-    position: relative;
-    border: 1px solid black;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column; 
-    align-items: center;   
-    justify-content: space-around; 
-    padding-top: 10px; 
-    gap: 20px; 
-}
-.input-section {
-    display: flex;
-    justify-self: flex-start;
-    flex-direction: column;
-    gap: 20px;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr; 
+  justify-content: center;
+  width: 600px;
+  height: 400px;
+  gap: 12px;
+  padding: 16px;
+  border: 1px solid blue;
+  border-radius: 10px;
 }
 
-.input_form {
+#input-form {
     display: flex;
     gap: 8px;
     align-items: center;
 }
 
-.cityInput {
+.input-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#city-input {
     height: 40px;
     padding: 5px;
     font-size: 15px;
 }
 
-.submit-button, 
-.fav-city,
-.night-mode {
+#submit-button, 
+#fav-city-button,
+#night-mode-button {
+    border: 1px solid blue;
+    border-radius: 5px;
     height: 40px;
-    padding: 5.5px;
+    padding: 5px;
 }
 
-.container-text {
-    font-weight: 600;
-}
 .dynamic-section {
-    min-width: 200px;
-    position: absolute;
-    bottom: 45%;
     display: flex;
     gap: 20px;
-    justify-content: space-around;
-    font-size: 1.125em;
+    justify-content: center;
+    align-items: center;
 }

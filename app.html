@@ -1,29 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Real Time Weather Dashboard</title>
-    <link rel="stylesheet" href="app.css">
+    <linK rel="stylesheet" href="app.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <div class = "main-container">
+    <div class="main-container">
         <div class="input-section">
-        <h4 class="container-text"> Real Time Weather Dashboard</h4>
-        <form class = "input_form"> 
-            <input type="text" class="cityInput" placeholder="Enter City">
-            <button class="submit-button" type="submit">Get Weather</button>
-        </form>
+            <h4 class="container-text"> Real Time Weather Dashboard</h4>
+            <form id="input-form"> 
+                <input type="text" id="city-input" placeholder="Enter City">
+                <button id="submit-button" type="submit">Get Weather</button>
+            </form>
+            <p id="error-message" style="color: red;"></p>
         </div>
+
         <div class="dynamic-section"> 
-            <p class="city">Toronto</p> 
-            <p class="tempreture">Temprature: 9℃</p>
-            <p class="weather-description">Drizzle</p>
-            <p class="emojirepresentation">🌧️</p>
+            <h2 id="weather-city">Toronto</h2> 
+            <p id="weather-icon">🌧️</p> 
+            <p id="weather-temp">9</p>
+            <p id="weather-description">Drizzle</p>
         </div>
+
         <div class="functional-buttons">
-        <button class="fav-city" type="submit">Save Favourite City</button>
-        <button class="night-mode" type="button">Dark Mode</button>
+            <button id="fav-city-button" type="button">Save Favourite City</button>
+            <button id="night-mode-button" type="button">Dark Mode</button>
         </div>
     </div>
 </body>
