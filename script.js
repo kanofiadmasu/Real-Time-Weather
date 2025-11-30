@@ -96,7 +96,7 @@ function displayWeather(data) {
 // Access weather data
     const cityName = data.name
 
-// Possible to more temprature detail(max-temp, min-temp, feels-like, etc..) dependig on use
+// Possible to add more temprature details(max-temp, min-temp, feels-like, etc..) dependig on use
     const mainTemp= Math.round(data.main.temp)
     const description = data.weather[0].description
     const weatherId = data.weather[0].id
