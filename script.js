@@ -1,15 +1,47 @@
-// Add your Own Api Key to Make this Project Functional
+// Add a valid API key and Base URL to make this web-app functional
 
 const form = document.getElementById("input-form");
 const cityInput = document.getElementById("city-input");
 const dynamicSection = document.querySelector(".dynamic-section");
 const saveButton = document.getElementById("fav-city-button");
-const themeToggel = document.getElementById("night-mode-button");
+const themeButton = document.getElementById("night-mode-button");
+const body = document.body;
 const tempElement = document.getElementById("temprature");
 const descElement = document.getElementById("weather-description");
 const iconElement = document.getElementById("icon");
 const city = document.getElementById("city");
-const apiKey = ""
+const apiKey = "362ca154ca2ba88b090edbf69c89e4f1" // Add API key here
+
+// Checking for theme Preference
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme) {
+    setTheme(savedTheme);
+} else {
+    setTheme('light');
+}
+
+function setTheme(theme) {
+    if (theme === 'dark') {
+        body.classList.add('dark-theme')
+        themeButton.textContent = 'Light Mode 🔆';
+    } else {
+        body.classList.remove('dark-theme') 
+        themeButton.textContent = 'Dark Mode 🌙'; 
+    }
+}
+
+//Theme toggle button 
+themeButton.addEventListener("click", () => {
+    const isDark = body.classList.contains('dark-theme');
+    
+    if (isDark) {
+        setTheme('light');
+        localStorage.setItem('theme', 'light')
+    } else {
+        setTheme('dark');
+        localStorage.setItem('theme', 'dark');
+    }
+});
 
 form.addEventListener("submit", async event => {
     event.preventDefault();
@@ -46,7 +78,12 @@ function clearError() {
 }
 
 async function getWeather(city) {
+<<<<<<< HEAD
     const apiUrl = ``;
+=======
+    // Add base URL here
+    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+>>>>>>> 19c29a2 (added a theme toggle functionality)
 
     const response = await fetch(apiUrl);
 
@@ -78,7 +115,6 @@ function displayWeather(data) {
 function emojiAssignment(weatherId) {
 
     const id = weatherId; 
-    
     if (id >= 200 && id < 300) {
         return '⛈️'; 
     } else if (id >= 300 && id < 600) { 
@@ -95,4 +131,5 @@ function emojiAssignment(weatherId) {
         return '❓';
     }
 };
+
 

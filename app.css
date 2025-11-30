@@ -5,11 +5,19 @@
 }
 
 body {
+    background-color: hsl(0, 0%, 80%);
+    color:  black;
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
 }
+
+body.dark-theme {
+    background-color: hsl(0, 0%,15%);
+    color: whitesmoke;
+}
+
 .main-container {
   display: grid;
   grid-template-rows: 1fr auto 1fr; 
